@@ -5,58 +5,84 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ThEdu Workshop</title>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;600;700&display=swap');
+
+        :root {
+            --blue-900: #0b1f4d;
+            --blue-700: #1a3f8b;
+            --blue-500: #2f6fd1;
+            --blue-100: #e9f0ff;
+            --ink-900: #0f1b2d;
+            --ink-600: #4a5a72;
+            --white: #ffffff;
+        }
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f5f5f5;
+            font-family: 'Manrope', 'Segoe UI', Arial, sans-serif;
+            background: linear-gradient(135deg, var(--blue-100), #f7faff 40%, #ffffff 100%);
+            color: var(--ink-900);
         }
         .container {
             display: flex;
             min-height: 100vh;
         }
         .sidebar {
-            width: 250px;
-            background-color: #333;
-            color: white;
-            padding: 20px;
+            width: 260px;
+            background: linear-gradient(180deg, var(--blue-900), var(--blue-700));
+            color: var(--white);
+            padding: 24px;
             overflow-y: auto;
+            box-shadow: 4px 0 16px rgba(11, 31, 77, 0.2);
         }
         .sidebar h2 {
-            margin-bottom: 20px;
-            font-size: 18px;
+            margin-bottom: 16px;
+            font-size: 16px;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            color: #cfe0ff;
+        }
+        .sidebar h2:not(:first-of-type) {
+            margin-top: 24px;
         }
         .sidebar ul {
             list-style: none;
         }
         .sidebar li {
-            padding: 10px;
-            border-bottom: 1px solid #555;
+            padding: 10px 12px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.12);
             cursor: pointer;
+            border-radius: 8px;
         }
         .sidebar li:hover {
-            background-color: #555;
+            background-color: rgba(255, 255, 255, 0.12);
         }
         .sidebar a {
-            color: white;
+            color: var(--white);
             text-decoration: none;
             display: block;
+            font-weight: 500;
         }
         .main-content {
             flex: 1;
-            padding: 40px;
-            background-color: white;
+            padding: 48px 56px;
+            background: var(--white);
+            border-radius: 24px 0 0 24px;
+            margin: 24px 24px 24px 0;
+            box-shadow: 0 16px 40px rgba(11, 31, 77, 0.08);
         }
         .main-content h1 {
             margin-bottom: 20px;
-            color: #333;
+            color: var(--blue-900);
+            font-size: 32px;
+            letter-spacing: -0.02em;
         }
         .main-content p {
-            line-height: 1.6;
-            color: #666;
+            line-height: 1.7;
+            color: var(--ink-600);
             margin-bottom: 15px;
         }
         .main-content ul,
@@ -93,20 +119,23 @@
         } */
         .tabs {
             display: flex;
-            border-bottom: 2px solid #ddd;
+            border-bottom: 2px solid #e2e8f6;
             margin-bottom: 20px;
+            gap: 8px;
         }
         .tab-button {
-            padding: 12px 24px;
-            background-color: #f5f5f5;
-            border: none;
+            padding: 10px 18px;
+            background-color: var(--blue-100);
+            border: 1px solid #d8e5ff;
             cursor: pointer;
             text-decoration: none;
-            color: #333;
+            color: var(--blue-700);
             display: inline-block;
+            border-radius: 999px;
+            font-weight: 600;
         }
         .tab-button:hover {
-            background-color: #e0e0e0;
+            background-color: #dfe9ff;
         }
         .tab-content {
             display: none;
@@ -121,13 +150,36 @@
         .content-section dl { margin-bottom: 20px; } 
         .content-section dt { font-weight: bold; margin-top: 10px; } 
         .content-section dd { margin-left: 20px; margin-bottom: 10px; }
+        .main-content table {
+            width: 100%;
+            border-collapse: collapse;
+            background: #f8fbff;
+            border: 1px solid #d9e5fb;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 24px rgba(11, 31, 77, 0.06);
+        }
+        .main-content table th,
+        .main-content table td {
+            padding: 14px 16px;
+            text-align: left;
+            border-bottom: 1px solid #e3edff;
+            color: var(--ink-600);
+            font-weight: 500;
+        }
+        .main-content table tr:last-child td {
+            border-bottom: none;
+        }
+        .main-content table tr:nth-child(even) td {
+            background: #eef4ff;
+        }
     </style>
 </head>
 <body>
     <div class="container">
         <div class="sidebar">
 
-            <h2>ThEdu Conference Series</h2>
+            <h2>ThEdu workshop Series</h2>
              <ul>
                 <li><a href="#presentation">Presentation</a></li>
                 <li><a href="#board">ThEdu Board</a></li>
@@ -135,7 +187,12 @@
                 <li><a href="#proceedings">ThEdu Proceedings</a></li>
             </ul>
 
-            <h2>Previous Conferences</h2>
+            <h2>Next workshop</h2>
+
+            <ul> <li><a href="#thedu26">ThEdu'26</a></li> </ul>
+
+
+            <h2>Previous workshops</h2>
             <ul>
                 <li><a href="#thedu11">ThEdu'11</a></li>
                 <li><a href="#thedu13">ThEdu'13</a></li>
@@ -151,7 +208,6 @@
                 <li><a href="#thedu23">ThEdu'23</a></li>
                 <li><a href="#thedu24">ThEdu'24</a></li>
                 <li><a href="#thedu25">ThEdu'25</a></li>
-                <li><a href="#thedu26">ThEdu'26</a></li>
             </ul>
         </div>
 
@@ -312,6 +368,8 @@
             <!-- ThEdu'26 -->
             <div id="thedu26" class="content-section">
                 <h1>ThEdu'26</h1>
+                16th International Workshop on Theorem proving components for Educational software
+
                 <div class="tabs">
                     <a href="#thedu26-importantdates" class="tab-button">Important Dates</a>
                     <a href="#thedu26-committee" class="tab-button">Program Committee</a>
@@ -394,6 +452,13 @@
                 </div>
             </div>
 
+            <!-- ThEdu'25 -->
+            <div id="thedu25" class="content-section">
+                <h1>ThEdu'25</h1>
+                    <a href="https://www.uc.pt/events/thedu/thedu25/">ThEdu25 website</a>
+            </div>
+
+  
               <!-- ThEdu'24 -->
             <div id="thedu24" class="content-section">
                 <h1>ThEdu'24</h1>
