@@ -21,20 +21,27 @@
             padding: 0;
             box-sizing: border-box;
         }
+        html,
+        body {
+            height: 100%;
+        }
         body {
             font-family: 'Manrope', 'Segoe UI', Arial, sans-serif;
             background: linear-gradient(135deg, var(--blue-100), #f7faff 40%, #ffffff 100%);
             color: var(--ink-900);
+            overflow: hidden;
         }
         .container {
             display: flex;
-            min-height: 100vh;
+            height: 100vh;
         }
         .sidebar {
             width: 260px;
+            flex: 0 0 260px;
             background: linear-gradient(180deg, var(--blue-900), var(--blue-700));
             color: var(--white);
             padding: 24px;
+            height: 100vh;
             overflow-y: auto;
             box-shadow: 4px 0 16px rgba(11, 31, 77, 0.2);
         }
@@ -75,6 +82,8 @@
             border-radius: 24px 0 0 24px;
             margin: 24px 24px 24px 0;
             box-shadow: 0 16px 40px rgba(11, 31, 77, 0.08);
+            height: calc(100vh - 48px);
+            overflow-y: auto;
         }
         .main-content h1 {
             margin-bottom: 20px;
@@ -191,7 +200,7 @@
 
             <h2>Next workshop</h2>
 
-            <ul> <li><a href="#thedu26">ThEdu'26</a></li> </ul>
+            <ul> <li><a href="#thedu26-presentation">ThEdu'26</a></li> </ul>
 
 
             <h2>Previous workshops</h2>
