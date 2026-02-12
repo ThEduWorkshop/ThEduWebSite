@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ThEdu Workshop</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+        }
+        .container {
+            display: flex;
+            min-height: 100vh;
+        }
+        .sidebar {
+            width: 250px;
+            background-color: #333;
+            color: white;
+            padding: 20px;
+            overflow-y: auto;
+        }
+        .sidebar h2 {
+            margin-bottom: 20px;
+            font-size: 18px;
+        }
+        .sidebar ul {
+            list-style: none;
+        }
+        .sidebar li {
+            padding: 10px;
+            border-bottom: 1px solid #555;
+            cursor: pointer;
+        }
+        .sidebar li:hover {
+            background-color: #555;
+        }
+        .sidebar a {
+            color: white;
+            text-decoration: none;
+            display: block;
+        }
+        .main-content {
+            flex: 1;
+            padding: 40px;
+            background-color: white;
+        }
+        .main-content h1 {
+            margin-bottom: 20px;
+            color: #333;
+        }
+        .main-content p {
+            line-height: 1.6;
+            color: #666;
+            margin-bottom: 15px;
+        }
+        .main-content ul,
+        .main-content ol {
+            margin-left: 30px;
+            margin-bottom: 15px;
+            line-height: 1.6;
+            color: #666;
+        }
+        .main-content li {
+            margin-bottom: 8px;
+        }
+   
+        .content-section {
+            display: none;
+        }
+        .content-section:target {
+            display: block;
+        }
+        .content-section:has(:target) {
+            display: block;
+        }
+        .content-section:target h1 {
+            display: block;
+        }
+       /* .content-section:target .tabs {
+            display: flex;
+        } */
+        .content-section:has(:target) h1 {
+            display: block;
+        }
+        /* .content-section:has(:target) .tabs {
+            display: flex;
+        } */
+        .tabs {
+            display: flex;
+            border-bottom: 2px solid #ddd;
+            margin-bottom: 20px;
+        }
+        .tab-button {
+            padding: 12px 24px;
+            background-color: #f5f5f5;
+            border: none;
+            cursor: pointer;
+            text-decoration: none;
+            color: #333;
+            display: inline-block;
+        }
+        .tab-button:hover {
+            background-color: #e0e0e0;
+        }
+        .tab-content {
+            display: none;
+        }
+        .tab-content:target {
+            display: block;
+        }
+        .tab-content li { margin-bottom: 8px; }
+        .content-section:target > .tab-content:first-of-type {
+            display: block;
+        }
+        .content-section dl { margin-bottom: 20px; } 
+        .content-section dt { font-weight: bold; margin-top: 10px; } 
+        .content-section dd { margin-left: 20px; margin-bottom: 10px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+
+            <h2>ThEdu Conference Series</h2>
+             <ul>
+                <li><a href="#presentation">Presentation</a></li>
+                <li><a href="#board">ThEdu Board</a></li>
+                <li><a href="#bylaws">ThEdu ByLaws</a></li>
+                <li><a href="#proceedings">ThEdu Proceedings</a></li>
+            </ul>
+
+            <h2>Previous Conferences</h2>
+            <ul>
+                <li><a href="#thedu11">ThEdu'11</a></li>
+                <li><a href="#thedu13">ThEdu'13</a></li>
+                <li><a href="#thedu14">ThEdu'14</a></li>
+                <li><a href="#thedu15">ThEdu'15</a></li>
+                <li><a href="#thedu16">ThEdu'16</a></li>
+                <li><a href="#thedu17">ThEdu'17</a></li>
+                <li><a href="#thedu18">ThEdu'18</a></li>
+                <li><a href="#thedu19">ThEdu'19</a></li>
+                <li><a href="#thedu20">ThEdu'20</a></li>
+                <li><a href="#thedu21">ThEdu'21</a></li> 
+                <li><a href="#thedu22">ThEdu'22</a></li>
+                <li><a href="#thedu23">ThEdu'23</a></li>
+                <li><a href="#thedu24">ThEdu'24</a></li>
+                <li><a href="#thedu25">ThEdu'25</a></li>
+                <li><a href="#thedu26">ThEdu'26</a></li>
+            </ul>
+        </div>
+
+        <div class="main-content">
+         
+            <div id="presentation" class="content-section">
+                <h1>ThEdu Workshop series</h1> 
+                <p>ThEdu is a workshop series on theorem-proving components for educational software. The first ThEdu was held in 2011, and since then, it has been held annually, collocated with the CADE conference (or umbrella conferences containing CADE, e.g. IJCAR, FLoC).</p>
+                <p>The ThEdu group intends to gather the research communities for computer Theorem proving (TP), Automated Theorem Proving (ATP),  Interactive Theorem Proving (ITP) as well as for Computer Algebra Systems (CAS) and Dynamic Geometry Systems (DGS).</p>
+                <p>The goal of this union is to combine and focus systems of these areas to enhance existing educational software as well as studying the design of the next generation of mechanised mathematics assistants (MMA).</p>
+
+                
+                <h2>ThEdu Mailing list</h2>
+                <p>The address is: thedu@uc.pt</p>
+                <p>General information about the mailing list is at: <a href="http://ml.ci.uc.pt/mhonarchive/thedu/">ml.ci.uc.pt/mhonarchive/thedu/</a>.</p>
+            </div>
+            <div id="board" class="content-section">
+                <h1>ThEdu Board</h1>
+                <p>Steering Committee:
+                    <ul>
+                        <li> João Marcos, Federal University of Rio Grande do Norte, Brazil</li>
+                        <li> Filip Marić, University of Belgrade, Serbia</li>
+                        <li> Julien Narboux, University of Strasbourg, France</li>
+                        <li> Walther Neuper, Johannes Kepler University Linz, Austria</li>
+                        <li> Pedro Quaresma, University of Coimbra, Portugal</li>
+                        <li> Jørgen Villadsen, Technical University of Denmark, Denmark</li> 
+                    </ul>
+            </div>
+            <div id="bylaws" class="content-section">
+                <h1>ThEdu By-laws</h1>
+                <h2>By-laws of the "Theorem-proving components for Educational software (ThEdu)" Interest Group</h2>
+                
+                <p>The motivation for these by-laws is to guide the future directions and governance of the Theorem-proving components for Educational software (ThEdu) Workshop series. Ultimately, we hope to build a community of researchers and practitioners centred around the aims of the previous ThEdus, namely "to bring together experts in automated deduction with experts in education in order to further clarify the shape of the new software generation and to discuss existing systems". Experts working on topics such as:</p>
+                
+                <ul>
+                    <li>proof and proving in mathematics education;</li>
+                    <li>methods of automated deduction applied to checking students' input;</li>
+                    <li>methods of automated deduction applied to prove post-conditions for particular problem solutions;</li>
+                    <li>combinations of deduction and computation enabling systems to propose next steps;</li>
+                    <li>automatic/interactive provers applied to education.</li>
+                </ul>
+                
+                <p>To build such a community, we need continuity and some rules governing the central activity of any research community, namely, the ThEdu workshop. The following proposal is based on, and consistent with, the historical patterns observed in the first ten ThEdu (from 2011 to 2021). The proposal is deliberately minimal and under-specified. Therefore, their interpretations should be guided by historical patterns.</p>
+                
+                <h3>By-law 1: Organisation</h3>
+                <p>Each ThEdu Workshop shall have the following organisational positions:</p>
+                <ul>
+                    <li>General Chair</li>
+                    <li>Program Chair</li>
+                    <li>The Steering Committee</li>
+                    <li>Program Committee</li>
+                </ul>
+                <p>In between workshops the Steering Committee is the governing body of the ThEdu Interest Group. Chair, could also mean Co-chairs. If needed a local Chair could be added to this structure for the purpose of the organisation of a given ThEdu Workshop.</p>
+                
+                <h3>By-law 2: Collocation</h3>
+                <ol>
+                    <li>The preferred collocation of ThEdu is the CADE conference (or umbrella conferences containing CADE, e.g. IJCAR, FLoC).</li>
+                </ol>
+                
+                <h3>By-law 3: Appointments</h3>
+                <p>The initial appointments, for ThEdu'22, are: 
+                    <ol>
+                        <li>General Chair: Pedro Quaresma, University of Coimbra; </li>
+                        <li>Program Chair: Walther Neuper, Johannes Kepler University Linz; </li>
+                        <li>Steering Committee: Pedro Quaresma, Walther Neuper and João Marcos, Universidade Federal do Rio Grande do Norte.</li>
+                    </ol>
+                    General rules:
+                <ol>
+                    <li>The Steering Committee shall consist of the General Chair, Program Chair and any other members that they shall appoint.</li>
+                    <li>After the workshop, the Steering Committee appoints the General Chair for the next workshop.</li>
+                    <li>The General Chair, in consultation with the Steering Committee, appoints the Program Chair and, eventually, the Local Chair.</li>
+                    <li>The Program Chair, in consultation with the General Chair and the Steering Committee, appoints the Program Committee members.</li>
+                </ol>
+                
+                <h3>By-law 4: Duties</h3>
+                <ol>
+                    <li>The General Chair, in collaboration with the Local Chair, will hold a ThEdu business meeting during each Workshop.</li>
+                    <li>The General Chair for the next workshop, should prepare a ThEdu workshop proposal, to be submitted to the conference to which the workshop will be collocated.</li>
+                    <li>The Steering Committee and the Local Chair shall maintain, for each workshop, the corresponding ThEdu website, including links to previous ThEdu Websites.</li>
+                    <li>The General Chair, in collaboration with the Local Chair, should publicise the Workshop through the appropriate channels, e.g. the Association for Automated Reasoning (AAR) newsletter.</li>
+                    <li>The Steering Committee, with the collaboration of the Local Chair, should manage the ThEdu's mailing list, with the names of authors and attendees of past ThEdu workshops.</li>
+                </ol>
+                
+                <h3>By-law 5: Amendments</h3>
+                <ol>
+                    <li>The by-laws can be amended by ballot between workshop, given a proposal by the Steering Committee. A simple majority is enough for approval.</li>
+                    <li>Persons who have registered for at least one of the three preceding ThEdu workshops are eligible to vote.</li>
+                    <li>The ballot will be run by the Steering Committee.</li>
+                </ol>
+                
+                <p><strong>ThEdu'22, 11 August 2022, Haifa, Israel.</strong></p>
+            </div>
+
+
+            <div id="proceedings" class="content-section">
+                <h1>ThEdu Proceedings</h1>
+                <dl>
+                    <dt>ThEdu'24 - Proceedings </dt>
+                    <dd> Proceedings 13th International Workshop on Theorem proving components for Educational software, 11 or 12 August, 
+                        Satellite event at IJCAR 2024, Nancy, France, July 1-6, 2024, <a href="https://cgi.cse.unsw.edu.au/~eptcs/content.cgi?Thedu24" title="EPTCS419" target="_blank">EPTCS 419</a>, 25th May 2025.
+                    </dd>
+                    <dt>ThEdu'23 - Proceedings </dt>
+                    <dd> Proceedings 12th International Workshop on Theorem proving components for Educational software, 5 of July 2023, 
+                        workshop at the, 29th international Conference on Automated Deduction (CADE 2023), July 1-4, 2023, Rome, Italy, 
+                        <a href="https://cgi.cse.unsw.edu.au/~eptcs/content.cgi?Thedu23" title="EPTCS400" target="_blank">EPTCS 400</a>, 10th March 2023.
+                    </dd>
+                    <dt>ThEdu'22 - Proceedings </dt>
+                    <dd> Proceedings 11th International Workshop on Theorem proving components for Educational software, 11 or 12 August, workshop at
+                         FLoC 2022, July 31 – August 12, 2022, Haifa, Israel,
+                          <a href="https://cgi.cse.unsw.edu.au/~eptcs/content.cgi?Thedu22" title="EPTCS375" target="_blank">EPTCS 375</a>, 10th March 2023.
+                    </dd>
+                    <dt>ThEdu'21 - Proceedings </dt>
+                    <dd> Proceedings 10th
+                                International Workshop on Theorem proving components for Educational
+                                software, July 2021, Carnegie Mellon University, Pittsburgh, PA, United States of America (virtual), <a href="https://cgi.cse.unsw.edu.au/~eptcs/content.cgi?ThEdu21" title="EPTCS 354" target="_blank">EPTCS 354</a>, 8th February 2022.</dd>
+                    <dt>ThEdu'20 - Proceedings </dt>
+                    <dd> Proceedings 9th International Workshop on
+                                    <em>Theorem Proving Components for Educational Software</em> (ThEdu'20), Paris, France, June 2020 (canceled due COVID-19), <a href="http://eptcs.web.cse.unsw.edu.au/content.cgi?ThEdu2020" title="EPTCS328" target="_blank">EPTCS 328</a>, 30th October 2020.
+                    </dd>
+                    <dt>ThEdu'19 - Proceedings </dt>
+                    <dd> Proceedings 8th International Workshop on
+                                        <em>Theorem Proving Components for Educational software</em> (ThEdu'19), 25 August 2019, Natal, Brazil, <a href="http://eptcs.web.cse.unsw.edu.au/content.cgi?ThEdu19" title="EPTCS313" target="_blank">EPTCS 313</a>, 28th February 2020.
+                    </dd>
+                    <dt>ThEdu'18 - Proceedings </dt>
+                    <dd> Proceedings 7th International Workshop on
+                                        <em>Theorem proving components for Educational software</em> (ThEdu'18), Oxford, United Kingdom, 18 July 2018, <a href="http://eptcs.web.cse.unsw.edu.au/content.cgi?ThEdu18" title="EPTCS290" target="_blank">EPTCS 290</a>, 1 April 2019.
+                    </dd>
+                    <dt>ThEdu'17 - Proceedings </dt>
+                    <dd> Proceedings 6th International Workshop on
+                                            <em>Theorem proving components for Educational software</em> (ThEdu'17), Gothenburg Sweden, 6 August 2017, <a href="http://eptcs.web.cse.unsw.edu.au/content.cgi?ThEdu17" title="EPTCS267" target="_blank">EPTCS 267</a>, 2 March 2018.
+                    </dd>
+                    <dt>ThEdu'16 - Proceedings </dt>
+                    <dd>Joint Proceedings of the FM4M, MathUI, and ThEdu Workshops, Doctoral 
+                                                Program, and Work in Progress at the Conference on Intelligent Computer 
+                                                Mathematics (CICM 2016),
+                                                Bialystok, Poland, July 25-29, 2016. <a href="http://ceur-ws.org/Vol-1785/" title="CEURWS1785" target="_blank">CEUR-WS, 1785</a>.
+                    </dd>
+                    <dt>ThEdu'15 - Proceedings </dt>
+                    <dd>Proceedings 4th International Workshop on
+                                                    <em>Theorem proving components for Educational software</em> (ThEdu'15).  July 15, 2015, Washington DC, USA <a href="https://www.cisuc.uc.pt/ckfinder/userfiles/files/TR%202016-01.pdf" title="CISUCTR201601" target="_blank">CISUC TR2016-01</a>.
+                    </dd>
+                    <dt>ThEdu'14 - Proceedings</dt>
+                    <dd> Joint Proceedings of the MathUI, OpenMath and ThEdu Workshops and Work in Progress track 
+                                                        at CICM co-located with Conferences on Intelligent Computer Mathematics 
+                                                        (CICM 2014), Coimbra, Portugal, July 7-11, 2014. <a href="http://ceur-ws.org/Vol-1186/" title="CEURWS1186" target="_blank">CEUR-WS, 1186.</a>
+                    </dd>
+                    <dt>ThEdu'13 - Proceedings</dt>
+                    <dd>Joint Proceedings of the MathUI, OpenMath, PLMMS and ThEdu Workshops and Work  in Progress
+                                                            at CICM co-located with Conferences on Intelligent Computer Mathematics
+                                                            (CICM 2013), Bath, UK, July 9 - 10, 2013. <a href="http://ceur-ws.org/Vol-1010/" title="CEURWS1010" target="_blank">CEUR-WS, 1010</a>.
+                    </dd>
+                    <dt>ThEdu'11 - Proceedings</dt>
+                    <dd>Post-Proceedings of the First Workshop on CTP Components for Educational Software, Wrocław, Poland, 31 July 2011.  <a href="http://cgi.cse.unsw.edu.au/~rvg/eptcs/content.cgi?THedu11" title="" target="_self">EPTCS  79</a>, 2012.
+                    </dd>
+                </dl>
+            </div>
+            
+            <!-- ThEdu'26 -->
+            <div id="thedu26" class="content-section">
+                <h1>ThEdu'26</h1>
+                <div class="tabs">
+                    <a href="#thedu26-importantdates" class="tab-button">Important Dates</a>
+                    <a href="#thedu26-committee" class="tab-button">Program Committee</a>
+                    <a href="#thedu26-cfp-abstract" class="tab-button">Call for extended abstracts and demonstrations</a>
+                    <a href="#thedu26-program" class="tab-button">Program Schedule</a>
+                    <a href="#thedu26-cfp-postproc" class="tab-button">Post-proceedings: call for papers </a>
+                </div>
+                <div id="thedu26-importantdates" class="tab-content">
+                    <h2>Important Dates</h2>
+                    
+                    <table class="silvatable plain" border="1" cellpadding="1" cellspacing="1">
+                        <col width="50%" /><col width="50%" />
+                        <tr class="odd">
+                            <td class="align-left">
+                                <strong>Extended Abstracts : </strong>
+                            </td>
+                            <td class="align-left">
+                                <strong>29 April 2026 (firm deadline imposed by FLoC)</strong>
+                            </td>
+                        </tr>
+                        <tr class="even">
+                            <td class="align-left">
+                                <strong>Author Notification :</strong>
+                            </td>
+                            <td class="align-left">
+                                <strong>27 May 2026</strong>
+                            </td>
+                        </tr>
+                        <tr class="odd">
+                            <td class="align-left">
+                                <strong>Workshop Early Registration Deadline:</strong>
+                            </td>
+                            <td class="align-left">
+                                <strong>1 June 2026</strong>
+                            </td>
+                        </tr>
+                        <tr class="even">
+                            <td class="align-left">
+                                <strong>Workshop Day:</strong>
+                            </td>
+                            <td class="align-left">
+                                <strong>19 July 2026</strong>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div id="thedu26-committee" class="tab-content">
+                    <h2>Program Committee</h2>
+                    <ul>
+                        <li>João Marcos, Federal University of Rio Grande do Norte, Brazil</li>
+                        <li>Filip Marić, University of Belgrade, Serbia</li>
+                        <li>Julien Narboux, University of Strasbourg, France (co-chair)</li>
+                        <li>Walther Neuper, Johannes Kepler University Linz, Austria (co-chair)</li>
+                        <li>Pedro Quaresma, University of Coimbra, Portugal</li>
+                        <li>Philppe R. Richard, University of Montréal, Canada</li>
+                        <li>Vanda Santos, University of Aveiro, Portugal</li>
+                        <li>Anders Schlichtkrull, Aalborg University, Denmark</li>
+                        <li>Wolfgang Schreiner, Johannes Kepler University, Austria</li>
+                        <li>Athina Thoma, University of Southampton, UK</li>
+                        <li>M. Pilar Vélez, Nebrija University, Spain</li>
+                        <li>Jørgen Villadsen, Technical University of Denmark, Denmark</li>
+                        <li>Kitty Yan, University of Toronto, Canada</li>
+                    </ul>
+                    </br>
+                    
+                </div>
+                <div id="thedu26-cfp-abstract" class="tab-content">
+                    <h2>Call for extended abstracts and demonstrations</h2>
+                    <p>Call for extended abstracts and demonstrations content for ThEdu'26 goes here.</p>
+                    <a href="https://submissions.floc26.org/thedu/">Submission </a>
+                </div>
+                <div id="thedu26-program" class="tab-content">
+                    <h2>Program</h2>
+                    <p>TBA in may 2026.</p>
+                </div>
+                <div id="thedu26-cfp-postproc" class="tab-content"> 
+                    <h2>Post-proceedings: call for papers </h2>
+                    <p>We plan to publish post-proceedings for ThEdu'26 after the workshop after a second round of reviewing using EPCTS as in previous years. 
+                        This will be discussed during the business meeting of ThEdu'26.</p>
+                </div>
+            </div>
+
+              <!-- ThEdu'24 -->
+            <div id="thedu24" class="content-section">
+                <h1>ThEdu'24</h1>
+                    <a href="https://www.uc.pt/en/congressos/thedu/ThEdu24">ThEdu24 website</a>
+            </div>
+
+             <!-- ThEdu'23 -->
+            <div id="thedu23" class="content-section">
+                <h1>ThEdu'23</h1>
+                    <a href="https://www.uc.pt/en/congressos/thedu/ThEdu23">ThEdu23 website</a>
+            </div>
+
+             <!-- ThEdu'22 -->
+            <div id="thedu22" class="content-section">
+                <h1>ThEdu'22</h1>
+                    <a href="https://www.uc.pt/en/congressos/thedu/ThEdu22">ThEdu22 website</a>
+            </div>
+
+            <!-- ThEdu'21 -->
+            <div id="thedu21" class="content-section">
+                <h1>ThEdu'21</h1>
+                    <a href="https://www.uc.pt/en/congressos/thedu/ThEdu21">ThEdu21 website</a>
+            </div>
+        
+            <!-- ThEdu'20 -->
+            <div id="thedu20" class="content-section">
+                <h1>ThEdu'20</h1>
+                    <a href="https://www.uc.pt/en/congressos/thedu/thedu20">ThEdu20 website</a>
+            </div>
+
+             <!-- ThEdu'19 -->
+            <div id="thedu19" class="content-section">
+                <h1>ThEdu'19</h1>
+                    <a href="https://www.uc.pt/en/congressos/thedu/thedu19">ThEdu19 website</a>
+            </div>
+
+            <!-- ThEdu'18 -->
+            <div id="thedu18" class="content-section">
+                <h1>ThEdu'18</h1>
+                    <a href="https://www.uc.pt/en/congressos/thedu/thedu18">ThEdu18 website</a>
+            </div>
+  
+            <!-- ThEdu'17 -->
+            <div id="thedu17" class="content-section">
+                <h1>ThEdu'17</h1>
+                    <a href="https://www.uc.pt/en/congressos/thedu/thedu17">ThEdu17 website</a>
+            </div>
+
+             <!-- ThEdu'16 -->
+            <div id="thedu16" class="content-section">
+                <h1>ThEdu'16</h1>
+                    <a href="https://www.uc.pt/en/congressos/thedu/thedu16">ThEdu16 website</a>
+            </div>
+
+            <!-- ThEdu'15 -->
+            <div id="thedu15" class="content-section">
+                <h1>ThEdu'15</h1>
+                    <a href="https://www.uc.pt/en/congressos/thedu/thedu15">ThEdu15 website</a>
+            </div>
+  
+            <!-- ThEdu'14 -->
+            <div id="thedu14" class="content-section">
+                <h1>ThEdu'14</h1>
+                    <a href="https://www.uc.pt/en/congressos/thedu/thedu14">ThEdu14 website</a>
+            </div>
+
+             <!-- ThEdu'13 -->
+            <div id="thedu13" class="content-section">
+                <h1>ThEdu'13</h1>
+                    <a href="https://www.uc.pt/en/congressos/thedu/thedu13">ThEdu13 website</a>
+            </div>
+
+            <!-- ThEdu'11 -->
+            <div id="thedu11" class="content-section">
+                <h1>ThEdu'11</h1>
+                    <a href="https://www.uc.pt/en/congressos/thedu/thedu11">ThEdu11 website</a>
+            </div>
+  
+
+        </div>
+    </div>
+</body>
+</html>
